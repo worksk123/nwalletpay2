@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>N Wallet — Download for Android</title>
+<meta name="description" content="Download N Wallet for Android. Simple guided in-app tasks and a clear wallet and activity view. Version 1.0 · 7.8 MB · Android 7.0 and up.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="N Wallet — Download for Android">
+<meta property="og:description" content="Simple guided in-app tasks and a clear wallet and activity view.">
+<meta property="og:image" content="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1111585038253124');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1111585038253124&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root{
+  --ink:#0E1A33;
+  --body:#3F4A63;
+  --muted:#6B7690;
+  --line:#E3E7EF;
+  --soft:#F5F7FB;
+  --bg:#FFFFFF;
+  --blue:#0B5FD9;
+  --blue-dark:#0847A8;
+  --blue-tint:#EAF1FD;
+  --orange:#F26A1B;
+  --green:#17A35A;
+  --green-tint:#E7F6EE;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  margin:0;background:var(--bg);color:var(--body);
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{color:var(--ink);margin:0;letter-spacing:-.02em}
+.wrap{width:min(1120px,100% - 32px);margin:0 auto}
+.icon{border-radius:22%;border:1px solid var(--line);background:#fff;object-fit:cover}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{height:64px;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);font-size:17px}
+.logo img{width:36px;height:36px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:14.5px;font-weight:600;color:var(--body)}
+.links a:hover{color:var(--blue)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--blue);color:#fff;font-weight:700;font-size:15px;
+  padding:13px 22px;border-radius:12px;border:0;cursor:pointer;
+  transition:background .15s ease;
+}
+.btn:hover{background:var(--blue-dark)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.sm{padding:9px 16px;font-size:14px;border-radius:10px}
+.btn.lg{padding:16px 28px;font-size:16.5px;border-radius:14px}
+.btn-line{
+  display:inline-flex;align-items:center;gap:8px;padding:16px 22px;border-radius:14px;
+  border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;background:#fff
+}
+.btn-line:hover{border-color:#C9D0DD}
+
+/* hero */
+.hero{padding:64px 0 56px;background:linear-gradient(180deg,#F7F9FD 0%,#fff 100%);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.app-id{display:flex;align-items:center;gap:16px;margin-bottom:26px}
+.app-id img{width:72px;height:72px}
+.app-id b{display:block;color:var(--ink);font-size:20px;font-weight:800;line-height:1.2}
+.app-id span{font-size:14px;color:var(--muted)}
+.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.08;font-weight:800;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.sub{font-size:18px;color:var(--body);max-width:520px;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.facts{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;max-width:540px}
+.facts div{flex:1 1 0;min-width:100px;padding-right:16px}
+.facts div+div{border-left:1px solid var(--line);padding-left:16px}
+.facts b{display:block;color:var(--ink);font-size:16px;font-weight:800}
+.facts span{font-size:13px;color:var(--muted)}
+
+/* phone */
+.device{justify-self:center;width:300px;border-radius:44px;background:#11151F;padding:10px;box-shadow:0 1px 0 #2A3142 inset,0 40px 60px -30px rgba(14,26,51,.35),0 12px 24px -12px rgba(14,26,51,.25)}
+.screen{border-radius:35px;overflow:hidden;background:#F4F6FA;height:600px;position:relative;font-size:12px;color:var(--ink)}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 6px;font-size:12px;font-weight:700}
+.sbar .notch{width:84px;height:22px;border-radius:12px;background:#11151F}
+.sbar i{display:inline-flex;gap:3px;align-items:flex-end}
+.sbar i u{display:block;width:3px;background:var(--ink);border-radius:1px}
+.ahead{display:flex;align-items:center;justify-content:space-between;padding:10px 18px}
+.ahead .who{display:flex;align-items:center;gap:9px}
+.ahead img{width:32px;height:32px;border-radius:9px;border:1px solid var(--line)}
+.ahead b{display:block;font-size:13.5px}
+.ahead small{display:block;font-size:10.5px;color:var(--muted)}
+.ahead .bell{width:32px;height:32px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center}
+.ahead .bell svg{width:15px;height:15px;color:var(--body)}
+.wcard{margin:6px 16px 0;border-radius:18px;background:var(--blue);color:#fff;padding:16px 16px 14px;position:relative;overflow:hidden}
+.wcard:after{content:"";position:absolute;right:-40px;top:-50px;width:150px;height:150px;border-radius:50%;border:18px solid rgba(255,255,255,.06)}
+.wcard small{font-size:10.5px;opacity:.85;font-weight:600}
+.wcard .amt{display:flex;align-items:center;gap:8px;font-size:22px;font-weight:800;letter-spacing:.06em;margin:4px 0 12px}
+.wcard .amt svg{width:16px;height:16px;opacity:.85}
+.wcard .row{display:flex;gap:8px}
+.wcard .row span{background:rgba(255,255,255,.16);padding:6px 10px;border-radius:8px;font-size:10.5px;font-weight:700}
+.qa{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px 16px 4px}
+.qa div{text-align:center;font-size:10.5px;font-weight:600;color:var(--body)}
+.qa i{display:grid;place-items:center;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);margin-bottom:5px}
+.qa svg{width:18px;height:18px;color:var(--blue)}
+.qa div:nth-child(3) svg{color:var(--orange)}
+.qa div:nth-child(4) svg{color:var(--green)}
+.list{margin:12px 16px 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:4px 12px}
+.list h6{margin:10px 0 4px;font-size:12px;display:flex;justify-content:space-between}
+.list h6 span{color:var(--blue);font-weight:600}
+.task{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #EEF1F6}
+.task:first-of-type{border-top:0}
+.task .ti{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--blue-tint);color:var(--blue);flex:none}
+.task .ti svg{width:15px;height:15px}
+.task b{display:block;font-size:11.5px;font-weight:700}
+.task small{font-size:10px;color:var(--muted)}
+.task em{margin-left:auto;font-style:normal;font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--blue);color:#fff}
+.task em.done{background:var(--green-tint);color:var(--green)}
+.tabs{position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:9px 0 14px}
+.tabs div{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9.5px;font-weight:600;color:var(--muted)}
+.tabs div.on{color:var(--blue)}
+.tabs svg{width:18px;height:18px}
+
+/* sections */
+section{padding:84px 0}
+.sh{max-width:620px;margin-bottom:40px}
+.sh .tag{font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px;display:block}
+.sh h2{font-size:clamp(28px,3.6vw,38px);line-height:1.15;font-weight:800;margin-bottom:12px}
+.sh p{margin:0;font-size:17px}
+
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.feat article{padding:30px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feat article:nth-child(3n){border-right:0}
+.feat article:nth-last-child(-n+3){border-bottom:0}
+.feat .fi{width:44px;height:44px;border-radius:12px;background:var(--blue-tint);display:grid;place-items:center;margin-bottom:18px}
+.feat .fi svg{width:22px;height:22px;color:var(--blue)}
+.feat h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.feat p{margin:0;font-size:15px}
+
+/* install */
+.install{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.st{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 22px;position:relative}
+.st .n{width:34px;height:34px;border-radius:50%;border:2px solid var(--blue);color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:15px;margin-bottom:16px}
+.st.key{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-tint)}
+.st.key .n{background:var(--blue);color:#fff}
+.st h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.st p{margin:0;font-size:14.5px}
+.note{margin-top:22px;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 18px;font-size:14.5px}
+.note svg{width:20px;height:20px;color:var(--orange);flex:none;margin-top:2px}
+
+/* details */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.table{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.table div{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line);font-size:15px}
+.table div:last-child{border-bottom:0}
+.table div:nth-child(odd){background:var(--soft)}
+.table span{color:var(--muted)}
+.table b{color:var(--ink);font-weight:700;text-align:right}
+.perm{display:grid;gap:12px;margin-top:4px}
+.perm div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:14px}
+.perm svg{width:22px;height:22px;color:var(--blue);flex:none;margin-top:2px}
+.perm b{display:block;color:var(--ink);font-size:15.5px}
+.perm span{font-size:14.5px}
+
+/* info */
+.info{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.info div{padding:22px 24px;border-radius:16px;background:var(--soft);border:1px solid var(--line)}
+.info h3{font-size:16.5px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.info h3 svg{width:20px;height:20px;color:var(--blue)}
+.info p{margin:0;font-size:15px}
+
+/* faq */
+.faq{max-width:780px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:700;color:var(--ink);font-size:16.5px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";position:absolute;right:6px;top:27px;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary:after{transform:rotate(-135deg);top:31px}
+.faq p{margin:0 0 20px;font-size:15.5px;max-width:680px}
+
+/* final */
+.final{padding:0 0 84px}
+.band{background:var(--ink);border-radius:24px;padding:44px 48px;display:flex;align-items:center;gap:28px;color:#C9D1E3}
+.band img{width:84px;height:84px;border:0}
+.band h2{color:#fff;font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:6px}
+.band p{margin:0;font-size:16px}
+.band .btn{margin-left:auto;background:#fff;color:var(--ink)}
+.band .btn:hover{background:#E9EEF7}
+
+footer{border-top:1px solid var(--line);padding:36px 0 40px;font-size:14px;color:var(--muted)}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer nav{display:flex;gap:22px;font-weight:600;color:var(--body)}
+footer nav a:hover{color:var(--blue)}
+footer .small{margin-top:20px;font-size:13px;line-height:1.7;max-width:820px}
+
+/* mobile sticky */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s ease;box-shadow:0 -8px 24px -12px rgba(14,26,51,.18)}
+.bar.show{transform:none}
+.bar img{width:42px;height:42px}
+.bar div{flex:1;min-width:0;line-height:1.3}
+.bar b{display:block;color:var(--ink);font-size:15px}
+.bar span{font-size:12.5px;color:var(--muted)}
+
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,16px);opacity:0;pointer-events:none;z-index:60;background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:12px 18px;border-radius:12px;transition:.25s;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:960px){
+  .links{display:none}
+  .top .btn{margin-left:auto}
+  .hero{padding:40px 0 48px}
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .device{width:270px}
+  .screen{height:540px}
+  .feat{grid-template-columns:1fr 1fr}
+  .feat article{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  .feat article:nth-child(2n){border-right:0!important}
+  .feat article:nth-last-child(-n+2){border-bottom:0!important}
+  .steps{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:36px}
+  .bar{display:flex}
+  footer{padding-bottom:110px}
+}
+@media (max-width:600px){
+  section{padding:60px 0}
+  .hero h1{font-size:34px}
+  .hero p.sub{font-size:16.5px}
+  .cta .btn,.cta .btn-line{width:100%;justify-content:center}
+  .facts div{padding-right:10px}
+  .facts div+div{padding-left:10px}
+  .facts b{font-size:15px}
+  .feat{grid-template-columns:1fr}
+  .feat article{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .feat article:last-child{border-bottom:0!important}
+  .steps{grid-template-columns:1fr}
+  .info{grid-template-columns:1fr}
+  .band{flex-direction:column;text-align:center;padding:36px 24px}
+  .band .btn{margin:6px 0 0;width:100%}
+  .table div{font-size:14.5px;padding:14px 16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><img class="icon" src="logo.png" alt="N Wallet logo">N Wallet</a>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#install">How to install</a>
+      <a href="#details">App details</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn sm" href="nwallet.apk" download="nwallet.apk" data-download>Download</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="app-id">
+        <img class="icon" src="logo.png" alt="N Wallet app icon">
+        <div><b>N Wallet</b><span>Android app · Version 1.0</span></div>
+      </div>
+      <h1>Simple tasks and your wallet, <em>in one app.</em></h1>
+      <p class="sub">N Wallet brings guided in-app tasks, your wallet view and your activity history together on one clean screen. Download the Android app and set it up in about a minute.</p>
+      <div class="cta" id="get">
+        <a class="btn lg" href="nwallet.apk" download="nwallet.apk" data-download>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.86 3.22A11.4 11.4 0 0012 8c-1.7 0-3.3.37-4.71 1.02L5.43 5.8a.5.5 0 10-.87.5L6.4 9.48A10.8 10.8 0 001 18h22a10.8 10.8 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
+          Download for Android
+        </a>
+        <a class="btn-line" href="#install">How to install
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+      <div class="facts">
+        <div><b>7.8 MB</b><span>Download size</span></div>
+        <div><b>7.0+</b><span>Android version</span></div>
+        <div><b>Free</b><span>To download</span></div>
+      </div>
+    </div>
+
+    <div class="device" aria-hidden="true">
+      <div class="screen">
+        <div class="sbar"><span>9:41</span><span class="notch"></span><i><u style="height:5px"></u><u style="height:7px"></u><u style="height:9px"></u><u style="height:11px"></u></i></div>
+        <div class="ahead">
+          <div class="who"><img src="logo.png" alt=""><div><b>N Wallet</b><small>Welcome back</small></div></div>
+          <div class="bell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 004 0"/></svg></div>
+        </div>
+        <div class="wcard">
+          <small>Wallet</small>
+          <div class="amt">₹ ••••• <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="row"><span>History</span><span>Tasks</span></div>
+        </div>
+        <div class="qa">
+          <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg></i>Tasks</div>
+          <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>History</div>
+          <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 012-2h2M17 3h2a2 2 0 012 2v2M21 17v2a2 2 0 01-2 2h-2M7 21H5a2 2 0 01-2-2v-2M7 12h10"/></svg></i>Scan</div>
+          <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></i>Help</div>
+        </div>
+        <div class="list">
+          <h6>Today's tasks <span>See all</span></h6>
+          <div class="task"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></span><div><b>Complete your profile</b><small>2 min</small></div><em class="done">Done</em></div>
+          <div class="task"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V3H6.5A2.5 2.5 0 004 5.5z"/><path d="M4 19.5A2.5 2.5 0 006.5 22H20v-5"/></svg></span><div><b>Read the starter guide</b><small>3 min</small></div><em>Start</em></div>
+          <div class="task"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><b>Daily check-in</b><small>1 min</small></div><em>Start</em></div>
+        </div>
+        <div class="tabs">
+          <div class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Home</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg>Tasks</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M16 15h2"/></svg>Wallet</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag">Features</span>
+      <h2>Built to be clear and easy to use</h2>
+      <p>No clutter. Everything you need is one or two taps away.</p>
+    </div>
+    <div class="feat">
+      <article>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg></div>
+        <h3>Guided tasks</h3>
+        <p>Each task shows its steps up front, so you know exactly what to do before you begin.</p>
+      </article>
+      <article>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M16 15h2"/></svg></div>
+        <h3>Wallet view</h3>
+        <p>Your in-app wallet and recent activity on the home screen, with the balance hidden until you tap.</p>
+      </article>
+      <article>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Full history</h3>
+        <p>Every completed task and wallet entry is listed with its date and time.</p>
+      </article>
+      <article>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3>Light and quick</h3>
+        <p>A 7.8 MB download that opens fast and runs on most phones with Android 7.0 or newer.</p>
+      </article>
+      <article>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+        <h3>Account sign-in</h3>
+        <p>Sign in on your own phone and continue where you left off.</p>
+      </article>
+      <article>
+        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></div>
+        <h3>In-app help</h3>
+        <p>Questions about a task or your account? Reach support from the Help section.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="install" id="install">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag">How to install</span>
+      <h2>Install in four steps</h2>
+      <p>N Wallet is installed directly from this page, so Android asks for one extra permission the first time.</p>
+    </div>
+    <div class="steps">
+      <div class="st"><div class="n">1</div><h3>Download</h3><p>Tap <b>Download for Android</b>. The file <b>nwallet.apk</b> saves to your phone.</p></div>
+      <div class="st"><div class="n">2</div><h3>Open the file</h3><p>Open it from the notification bar or your <b>Downloads</b> folder.</p></div>
+      <div class="st"><div class="n">3</div><h3>Allow &amp; install</h3><p>If asked, allow installs from your browser in <b>Settings</b>, go back and tap <b>Install</b>.</p></div>
+      <div class="st key"><div class="n">4</div><h3>Open the app</h3><p>Tap <b>Open</b>, create your account and read the in-app terms.</p></div>
+    </div>
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <span>Your phone may show a "this type of file can harm your device" message. Android shows it for every app downloaded outside the Play Store. Only continue if you trust the source.</span>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section id="details">
+  <div class="wrap split">
+    <div>
+      <div class="sh" style="margin-bottom:24px">
+        <span class="tag">App details</span>
+        <h2>What you're installing</h2>
+      </div>
+      <div class="table">
+        <div><span>App name</span><b>N Wallet</b></div>
+        <div><span>Version</span><b>1.0</b></div>
+        <div><span>File</span><b>nwallet.apk</b></div>
+        <div><span>Size</span><b>7.8 MB</b></div>
+        <div><span>Requires</span><b>Android 7.0 and up</b></div>
+        <div><span>Price</span><b>Free</b></div>
+      </div>
+    </div>
+    <div>
+      <div class="sh" style="margin-bottom:24px">
+        <span class="tag">Permissions</span>
+        <h2>Only three permissions</h2>
+      </div>
+      <div class="perm">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><p style="margin:0"><b>Internet</b><span>To load your account, tasks and activity.</span></p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0114 0M8.5 16a5 5 0 017 0M12 19.5h.01"/></svg><p style="margin:0"><b>Network status</b><span>To check you're online before loading data.</span></p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg><p style="margin:0"><b>Camera</b><span>Used only when a feature needs it, such as scanning, and only after you allow it.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOD TO KNOW -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag">Good to know</span>
+      <h2>Please read before you start</h2>
+    </div>
+    <div class="info">
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Rewards are not income</h3>
+        <p>Any rewards depend on the tasks you complete and can vary. They are not a salary, job offer, investment return or guaranteed income.</p>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Terms apply</h3>
+        <p>Eligibility, limits and withdrawal rules are explained in the app's terms. Please read them before you begin.</p>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Protect your account</h3>
+        <p>Never share your OTP, UPI PIN, card details or password with anyone, including people who say they are from N Wallet.</p>
+      </div>
+      <div>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>For adults</h3>
+        <p>The app is meant for users aged 18 and above.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Is N Wallet free?</summary><p>Yes. Downloading and installing the app from this page is free.</p></details>
+      <details><summary>I downloaded the file. What next?</summary><p>Open <b>nwallet.apk</b> from your notifications or Downloads folder, tap Install, then tap Open. Your tasks appear after you open the app and create an account.</p></details>
+      <details><summary>Can I earn a fixed amount every day?</summary><p>No. Rewards, where available, depend on the tasks you complete and the app's terms, and they can change. N Wallet should not be treated as a source of income.</p></details>
+      <details><summary>Why isn't it on the Play Store?</summary><p>N Wallet is offered as a direct download from this page. Android asks you to allow installs from your browser the first time. This is standard for direct downloads.</p></details>
+      <details><summary>Which phones are supported?</summary><p>Android phones running Android 7.0 or newer. The app is not available for iPhone.</p></details>
+      <details><summary>How is my data handled?</summary><p>The app collects only what it needs to run your account. Read our <a href="privacy-policy.html" style="color:var(--blue);font-weight:600">Privacy Policy</a> for details.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<div class="final">
+  <div class="wrap">
+    <div class="band">
+      <img class="icon" src="logo.png" alt="N Wallet logo">
+      <div>
+        <h2>Get N Wallet for Android</h2>
+        <p>Free download · 7.8 MB · Android 7.0 and up</p>
+      </div>
+      <a class="btn lg" href="nwallet.apk" download="nwallet.apk" data-download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
+        Download APK
+      </a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a class="logo" href="#top"><img class="icon" src="logo.png" alt="">N Wallet</a>
+      <nav>
+        <a href="#faq">FAQ</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </nav>
+    </div>
+    <p class="small">
+      © <span id="year">2026</span> N Wallet. N Wallet is a task-based app. Rewards depend on task completion, may vary and are not guaranteed.
+      This site is not part of the Facebook website or Meta Platforms, Inc., and is not endorsed by Meta in any way.
+    </p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <img class="icon" src="logo.png" alt="">
+  <div><b>N Wallet</b><span>Free · Android · 7.8 MB</span></div>
+  <a class="btn sm" href="nwallet.apk" download="nwallet.apk" data-download>Download</a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var KEY='nwallet_lead_v1', last=0, timer;
+  var toastEl=document.getElementById('toast');
+  function toast(msg){
+    toastEl.textContent=msg; toastEl.classList.add('show');
+    clearTimeout(timer); timer=setTimeout(function(){toastEl.classList.remove('show')},3000);
+  }
+  function leadSent(){ try{return sessionStorage.getItem(KEY)==='1'}catch(e){return false} }
+  function markLead(){ try{sessionStorage.setItem(KEY,'1')}catch(e){} }
+
+  document.querySelectorAll('[data-download]').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      var now=Date.now();
+      if(now-last<2000){ e.preventDefault(); return; }
+      last=now;
+      if(!leadSent()){
+        if(typeof window.fbq==='function'){
+          window.fbq('track','Lead',{content_name:'N Wallet APK',content_category:'app_download'});
+        }
+        markLead();
+      }
+      toast('Download started — open nwallet.apk to install');
+    });
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  var bar=document.getElementById('bar'), get=document.getElementById('get');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      bar.classList.toggle('show',!en[0].isIntersecting && en[0].boundingClientRect.top<0);
+    }).observe(get);
+  }
+})();
+</script>
+</body>
+</html>
